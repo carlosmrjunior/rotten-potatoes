@@ -44,16 +44,16 @@ jobs:
     needs: [CI]
     steps:
       - uses: actions/checkout@v2
-      - name: Kubernetes set context
-        uses: Azure/k8s-set-context@v1.1
-        with:
-          method: kubeconfig
-          kubeconfig: ${{ secrets.K8s_CONFIG }}
       - name: oci-cli
         uses: bytesbay/oci-cli-action@v1.0.1
         with:
           tenancy: ocid1.tenancy.oc1..aaaaaaaaoojnrwpxv4jrgp2sbs7y2wpwnokhrfvuk3mu2g5vge6p5avhnlaa
           region:  sa-saopaulo-1
+      - name: Kubernetes set context
+        uses: Azure/k8s-set-context@v1.1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8s_CONFIG }}   
       - name: Deploy Mongo
         uses: Azure/k8s-deploy@v1
         with:
