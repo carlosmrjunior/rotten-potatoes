@@ -55,8 +55,10 @@ jobs:
           tenancy: ocid1.tenancy.oc1..aaaaaaaaoojnrwpxv4jrgp2sbs7y2wpwnokhrfvuk3mu2g5vge6p5avhnlaa
           region:  sa-saopaulo-1
       - name: Deploy Mongo
+        timeout-minutes: 2
         uses: Azure/k8s-deploy@v1
         with:
           manifests: |
             k8s/mongodb/deployment.yaml
             k8s/mongodb/service.yaml
+            
