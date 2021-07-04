@@ -50,6 +50,7 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.K8s_CONFIG }}
       - name: oci-cli
+        uses: bytesbay/oci-cli-action@v1.0.1
         with:
           tenancy: ocid1.tenancy.oc1..aaaaaaaaoojnrwpxv4jrgp2sbs7y2wpwnokhrfvuk3mu2g5vge6p5avhnlaa
           region:  sa-saopaulo-1
