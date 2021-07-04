@@ -28,7 +28,6 @@ spec:
             value: mongouser
           - name: MONGODB_PASSWORD
             value: mongopwd
-
 ---
 
 apiVersion: v1
@@ -40,6 +39,6 @@ spec:
     app: movies
   ports:
     - port: 80
-      targetPort: 50000
+      targetPort: 5000
       nodePort: 30000
   type: NodePort
