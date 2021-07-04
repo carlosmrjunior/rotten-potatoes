@@ -19,5 +19,5 @@ spec:
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
             value: mongouser
-          - name: MONGO_INITB_ROOT_PASSWORD
+          - name: MONGO_INITDB_ROOT_PASSWORD
             value: mongopwd
